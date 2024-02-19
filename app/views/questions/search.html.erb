@@ -1,0 +1,12 @@
+<h1>Resultados da Pesquisa</h1>
+
+<% if @result.present? %>
+  <% @result.each do |question| %>
+    <h3><%= link_to question.question, question %></h3>
+    <p><%= truncate(question.response, length: 100) %></p>
+  <% end %>
+<% else %>
+  <p>Nenhum resultado encontrado.</p>
+<% end %>
+
+<%= link_to 'Voltar', questions_path %>

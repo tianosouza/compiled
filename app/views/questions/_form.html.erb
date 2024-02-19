@@ -1,0 +1,27 @@
+<%= form_with(model: @question, local: true) do |form| %>
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@question.errors.count, 'erro') %> impediu que esta pergunta fosse salva:</h2>
+
+      <ul>
+        <% @question.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :question %>
+    <%= form.text_area :question, rows: 3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :response %>
+    <%= form.text_area :response, rows: 5 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Salvar' %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+<h1>Perguntas e Respostas</h1>
+
+<%= link_to 'Nova Pergunta', new_question_path %>
+
+<%= form_tag search_questions_path, method: :get do %>
+  <%= text_field_tag :query, params[:query], placeholder: 'Pesquisar perguntas e respostas...' %>
+  <%= submit_tag 'Pesquisar' %>
+<% end %>
+
+<% @questions.each do |question| %>
+  <h3><%= link_to question.question, question %></h3>
+  <p><%= truncate(question.response, length: 100) %></p>
+<% end %>
