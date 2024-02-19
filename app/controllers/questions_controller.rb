@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   def index
     @questions = Question.all
+    @latest_questions = Question.order(created_at: :desc).limit(5)
   end
 
   def show

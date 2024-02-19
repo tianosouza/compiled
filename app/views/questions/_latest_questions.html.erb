@@ -1,0 +1,10 @@
+<% if @latest_questions.any? %>
+  <h2>Últimas Perguntas Adicionadas</h2>
+  <ul>
+    <% @latest_questions.each do |question| %>
+      <li><%= link_to question.question, pergunta %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Nenhuma pergunta disponível.</p>
+<% end %>

@@ -11,3 +11,5 @@
   <h3><%= link_to question.question, question %></h3>
   <p><%= truncate(question.response, length: 100) %></p>
 <% end %>
+
+<%= render 'latest_questions', latest_questions: @latest_questions %>
