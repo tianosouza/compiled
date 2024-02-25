@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Compiled</title>
+    <title>Compilado</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,9 +11,11 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="">
+    <%= render 'shared/nav' %>
+    <main class="">
       <%= yield %>
     </main>
+    <%= render 'shared/footer' %>
   </body>
 </html>

@@ -2,7 +2,7 @@
   <h2>Últimas Perguntas Adicionadas</h2>
   <ul>
     <% @latest_questions.each do |question| %>
-      <li><%= link_to question.question, pergunta %></li>
+      <li><%= link_to question.question, question %></li>
     <% end %>
   </ul>
 <% else %>
